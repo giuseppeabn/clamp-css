@@ -1,6 +1,6 @@
 
 
-class ClampCss:
+class _ClampCss:
     def __init__(self, min_screen: int = 1366, max_screen: int = 1920, fontSize_base: int = 16, decimal: int = 2):
         self.__min_screen = min_screen
         self.__max_screen = max_screen
@@ -22,7 +22,7 @@ class ClampCss:
     def transform_value_to_rem(self, value) -> str:
         return f"{round(value / self.__fontSize_base, self.__decimal)}rem"
 
-    def getClamp(self, min_size, max_size) -> str:
+    def get_clamp(self, min_size, max_size) -> str:
         v = round(((100 * (max_size - min_size)) /
                    (self.__max_screen - self.__min_screen)), self.__decimal)
         r = ((self.__min_screen * max_size) - (self.__max_screen * min_size)
